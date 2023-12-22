@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "414572143893",
+    "project_id": "rpifirebase-8e8b1",
+    "storage_bucket": "rpifirebase-8e8b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414572143893:android:b8ad96b03f41c8421c351c",
+        "android_client_info": {
+          "package_name": "com.example.ecorevs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZB533U7g80O9AXX_vmQt6YieV3mfPVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

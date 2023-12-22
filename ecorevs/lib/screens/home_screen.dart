@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:ecorevs/utils/colorlabel.dart';
+import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
 
-class Home extends StatefulWidget{
-  List<double> fieldValues = [];
+class Home extends StatefulWidget {
+  List<double> fieldValues = [44, 44, 44];
   Home({super.key});
 
   @override
@@ -58,9 +59,7 @@ class _HomeState extends State<Home> {
             }
             final List<QueryDocumentSnapshot<Map<String, dynamic>>> documents =
                 snapshot.data!.docs;
-
-            
-
+            widget.fieldValues.clear();
             for (QueryDocumentSnapshot<Map<String, dynamic>> document
                 in documents) {
               final Map<String, dynamic> data = document.data();

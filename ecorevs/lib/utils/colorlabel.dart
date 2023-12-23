@@ -3,7 +3,7 @@ class ColorLabel extends StatelessWidget {
   final Color color;
   final String label;
 
-  ColorLabel({required this.color, required this.label});
+  const ColorLabel({super.key, required this.color, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ColorLabel extends StatelessWidget {
             height: 24,
             color: color,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(label),
         ],
       ),

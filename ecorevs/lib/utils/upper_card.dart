@@ -1,11 +1,11 @@
-import 'package:ecorevs/screens/home_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const CardWidget({
+  const CardWidget({super.key, 
     required this.title,
     required this.subtitle,
   });
@@ -13,7 +13,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    
-    return Container(
+    return SizedBox(
       height: 100,
       width: 200, // Set the width of each card as needed
       child: Card(
@@ -24,9 +24,9 @@ class CardWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(subtitle),
           ],
         ),

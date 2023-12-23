@@ -12,7 +12,7 @@ class CustomMCard extends StatelessWidget {
   final String row3Value;
   final String row3Unit;
 
-  CustomMCard({
+  const CustomMCard({super.key, 
     required this.title,
     required this.row1Label,
     required this.row1Value,
@@ -28,17 +28,17 @@ class CustomMCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(16.0),
+      margin: const EdgeInsets.all(16.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             buildRow(row1Label, '$row1Value $row1Unit'),
             buildRow(row2Label, '$row2Value $row2Unit'),
             buildRow(row3Label, '$row3Value $row3Unit'),
@@ -52,11 +52,11 @@ class CustomMCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: TextStyle(fontSize: 16.0)),
+        Text(label, style: const TextStyle(fontSize: 16.0)),
         const SizedBox(
           width: 12,
         ),
-        Text(value, style: TextStyle(fontSize: 16.0)),
+        Text(value, style: const TextStyle(fontSize: 16.0)),
       ],
     );
   }

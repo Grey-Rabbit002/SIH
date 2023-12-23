@@ -1,5 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:ecorevs/services/fetch.dart';
-import 'package:ecorevs/services/global.dart';
 import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -8,6 +9,7 @@ import 'package:ecorevs/utils/colorlabel.dart';
 import 'package:video_player/video_player.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class Home extends StatefulWidget {
   List<double> fieldValues = [44, 44, 44];
   Home({super.key});
@@ -37,8 +39,9 @@ class _HomeState extends State<Home> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
-    List<double> myList = Provider.of<GlobalData>(context).Lister;
+    // List<double> myList = Provider.of<GlobalData>(context).Lister;
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
@@ -81,7 +84,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -93,7 +96,7 @@ class _HomeState extends State<Home> {
                   ),
                   Center(
                       child: Container(
-                          width: 150,
+                          width: 250,
                           height: 150,
                           decoration: BoxDecoration(
                             color: Colors.green,
@@ -108,15 +111,13 @@ class _HomeState extends State<Home> {
                                     ConnectionState.done) {
                                   return Center(
                                     child: AspectRatio(
-                                      aspectRatio: _videoPlayerController
-                                              .value.aspectRatio /
-                                          1.8,
+                                      aspectRatio: 16 / 9,
                                       child:
                                           VideoPlayer(_videoPlayerController),
                                     ),
                                   );
                                 } else {
-                                  return Center(
+                                  return const Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 }
@@ -132,20 +133,20 @@ class _HomeState extends State<Home> {
                       child: Divider(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text("Bar Chart",
                       style: TextStyle(color: Colors.green[700], fontSize: 18)),
-                  SizedBox(
-                    height: 10,
+                  const SizedBox(
+                    height: 25,
                   ),
                   SizedBox(
                     height: 200,
                     child: BarChart(
                       BarChartData(
                         alignment: BarChartAlignment.spaceEvenly,
-                        gridData: FlGridData(show: false),
+                        gridData: const FlGridData(show: false),
                         borderData: FlBorderData(
                           show: true,
                           border: const Border(
@@ -196,11 +197,25 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                      height: 10), // Add spacing between chart and color labels
-                  ColorLabel(color: Colors.blue, label: 'Bio degradable'),
-                  ColorLabel(color: Colors.green, label: 'Non Bio degradable'),
-                  ColorLabel(color: Colors.orange, label: 'Non Bio degradable'),
+                  const SizedBox(height: 10),
+                  const Row(
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ColorLabel(
+                              color: Colors.blue, label: 'Bio degradable'),
+                          ColorLabel(
+                              color: Colors.green, label: 'Non Bio degradable'),
+                          ColorLabel(
+                              color: Colors.orange,
+                              label: 'Non Bio degradable'),
+                        ],
+                      )
+                    ],
+                  ) // Add spacing between chart and color labels
                 ],
               ),
             );

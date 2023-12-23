@@ -1,5 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:ecorevs/firebase_options.dart';
-import 'package:ecorevs/screens/home.dart';
 import 'package:ecorevs/screens/splash.dart';
 import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ void main() async {
   );
   runApp(ChangeNotifierProvider(
     create: (context) => GlobalData(),
-    child: MyApp()));
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: SafeArea(child: SplashScreen()),
+      home: const SafeArea(child: SplashScreen()),
     );
   }
 }

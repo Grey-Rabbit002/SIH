@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -9,7 +11,7 @@ class ProfilePage extends StatelessWidget {
         children: [
           Container(
             height: 200,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.green,
               image: DecorationImage(
                 image: NetworkImage(
@@ -17,7 +19,7 @@ class ProfilePage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
@@ -37,15 +39,15 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           buildInfoCard('Carbon Credit', '100'),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           buildInfoCard('Amount Earned', '\$10'),
-          SizedBox(height: 16),
-          Divider(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
+          const Divider(),
+          const SizedBox(height: 16),
           buildActionCard('This Month Credits', Icons.arrow_forward_ios),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
     );
@@ -53,23 +55,23 @@ class ProfilePage extends StatelessWidget {
 
   Widget buildInfoCard(String label, String value) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 color: Colors.blue,
               ),
@@ -82,9 +84,9 @@ class ProfilePage extends StatelessWidget {
 
   Widget buildActionCard(String label, IconData iconData) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             Row(
@@ -92,7 +94,7 @@ class ProfilePage extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -100,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                 Icon(iconData),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             buildRow('Baseline', '10 MT'),
             buildRow('Used', '2 MT'),
             buildRow('Net', '8 MT'),

@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                   0.0; // Replace with your field name
 
               // Add the distance to the list
-              widget.fieldValues.add(((44 - distance) / 44) * 100);
+              widget.fieldValues.add(((44 - distance).abs() / 44) * 100);
 
               // print("/////////////////////////////////////");
               // print(widget.fieldValues);

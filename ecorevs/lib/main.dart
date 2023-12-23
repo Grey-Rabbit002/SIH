@@ -1,14 +1,18 @@
 import 'package:ecorevs/firebase_options.dart';
 import 'package:ecorevs/screens/home.dart';
+import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => GlobalData(),
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -1,11 +1,12 @@
 import 'package:ecorevs/services/fetch.dart';
 import 'package:ecorevs/services/global.dart';
+import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:ecorevs/utils/colorlabel.dart';
-import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   List<double> fieldValues = [44, 44, 44];
@@ -37,6 +38,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget build(BuildContext context) {
+    List<double> myList = Provider.of<GlobalData>(context).Lister;
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
@@ -68,7 +70,12 @@ class _HomeState extends State<Home> {
 
               // Add the distance to the list
               widget.fieldValues.add(((44 - distance) / 44) * 100);
+
+              // print("/////////////////////////////////////");
+              // print(widget.fieldValues);
             }
+            Provider.of<GlobalData>(context, listen: false)
+                .updateList(widget.fieldValues);
             return Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(

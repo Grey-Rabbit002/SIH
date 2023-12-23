@@ -1,5 +1,6 @@
 import 'package:ecorevs/screens/home_screen.dart';
 import 'package:ecorevs/screens/static_data.dart';
+import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

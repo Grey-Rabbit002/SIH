@@ -1,5 +1,6 @@
 import 'package:ecorevs/firebase_options.dart';
 import 'package:ecorevs/screens/home.dart';
+import 'package:ecorevs/screens/splash.dart';
 import 'package:ecorevs/services/update.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const SafeArea(child: HomeScreen()),
+      home: SafeArea(child: SplashScreen()),
     );
   }
 }

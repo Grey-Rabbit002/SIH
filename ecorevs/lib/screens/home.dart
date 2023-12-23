@@ -1,3 +1,4 @@
+import 'package:ecorevs/screens/hamburder.dart';
 import 'package:ecorevs/screens/home_screen.dart';
 import 'package:ecorevs/screens/profile.dart';
 import 'package:ecorevs/screens/static_data.dart';
@@ -27,6 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
               IconButton(
                 icon: const Icon(Icons.update_sharp),
                 onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HamBurger(),
+                      ));
                   // Handle search icon press
                 },
               ),
